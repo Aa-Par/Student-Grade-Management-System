@@ -32,19 +32,8 @@ file-based persistence, so it runs anywhere a JDK is installed.
 ## Requirements
 
 - **Java Development Kit (JDK) 17 or later.**
-  Check your version with:
-  ```bash
-  java -version
-  ```
-  If Java is not installed, install it from [https://adoptium.net](https://adoptium.net)
-  or via your OS package manager, e.g. on Ubuntu/Debian:
-  ```bash
-  sudo apt-get update
-  sudo apt-get install openjdk-21-jdk
-  ```
 - **No other dependencies.** The project uses only the Java standard library.
-- Maven is optional — a `pom.xml` is included for convenience, but the project
-  can be built and run with plain `javac`/`java` as well.
+- Maven is optional, but the project can be built and run with plain `javac`/`java` as well.
 
 ---
 
@@ -167,26 +156,6 @@ After logging in, you'll see a numbered menu:
 8. Remove Student
 0. Exit
 ```
-
-### Suggested walkthrough
-
-1. **Add Assignment** — e.g. name `Midterm Exam`, max marks `50`, weight `40`.
-   Add a second one, e.g. `Final Exam`, max marks `100`, weight `60`.
-   (Weights across all assignments should add up to 100 for percentages to
-   represent the full course, though the system will warn — not block — if they
-   don't.)
-2. **Add Student** — e.g. roll number `S101`, name `Alice Johnson`, section `A`.
-3. **Record Grade** — enter the student's roll number, the assignment name
-   exactly as created, and the marks obtained.
-4. **View Student Report Card** — prints a formatted breakdown of that
-   student's assignment scores, weighted overall percentage, letter grade, and
-   pass/fail status.
-5. **View Class Summary** — prints every student's result in one table along
-   with the class average and pass rate.
-
-All data you enter is saved automatically to the `data/` folder, so it will
-still be there the next time you run the program.
-
 ---
 
 ## Data Files
@@ -230,10 +199,3 @@ and the stream closes unexpectedly, which makes it safe to script or
 auto-test from the command line.
 
 ---
-
-## Notes
-
-- This is a single-user (single instructor) CLI tool; there is no concurrent
-  multi-user access.
-- To reset all data, simply delete the `data/` folder — it will be recreated
-  automatically the next time you run the program.
