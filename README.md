@@ -32,12 +32,8 @@ file-based persistence, so it runs anywhere a JDK is installed.
 ## Requirements
 
 - **Java Development Kit (JDK) 17 or later.**
-  Check your version with:
-  ```bash
-  java -version
-  ```
   If Java is not installed, install it from [https://adoptium.net](https://adoptium.net)
-  or via your OS package manager, e.g. on Ubuntu/Debian:
+  or via your OS package manager:
   ```bash
   sudo apt-get update
   sudo apt-get install openjdk-21-jdk
@@ -171,11 +167,11 @@ After logging in, you'll see a numbered menu:
 ### Suggested walkthrough
 
 1. **Add Assignment** — e.g. name `Midterm Exam`, max marks `50`, weight `40`.
-   Add a second one, e.g. `Final Exam`, max marks `100`, weight `60`.
+   Add a second one, e.g. `Term End Exam`, max marks `100`, weight `60`.
    (Weights across all assignments should add up to 100 for percentages to
    represent the full course, though the system will warn — not block — if they
    don't.)
-2. **Add Student** — e.g. roll number `S101`, name `Alice Johnson`, section `A`.
+2. **Add Student** — e.g. roll number `CSE12345`, name `John Doe`, section `A`.
 3. **Record Grade** — enter the student's roll number, the assignment name
    exactly as created, and the marks obtained.
 4. **View Student Report Card** — prints a formatted breakdown of that
