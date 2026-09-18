@@ -89,8 +89,8 @@ import com.gradesystem.exception.GradeSystemException.StudentNotFoundException;
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<Aa-Par>/<Student-Grade-Management-System>.git
-   cd <Student-Grade-Management-System>
+   git clone https://github.com/Aa-Par/Student-Grade-Management-System.git
+   cd Student-Grade-Management-System
    ```
 
 2. **Compile all source files** into an `out/` directory:
