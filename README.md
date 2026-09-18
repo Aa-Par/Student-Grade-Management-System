@@ -50,24 +50,24 @@ file-based persistence, so it runs anywhere a JDK is installed.
 StudentGradeManagementSystem/
 ├── pom.xml
 ├── README.md
-├── data/                          # created automatically at first run
+├── data/                          
 └── src/
     └── main/
         └── java/
             └── com/gradesystem/
-                ├── Main.java                     # CLI entry point / menu loop
+                ├── Main.java                    
                 ├── model/
-                │   └── Student.java               # Student, + nested Assignment,
-                │                                   # Grade, and LetterGrade enum
+                │   └── Student.java               
+                │                                   
                 ├── exception/
-                │   └── GradeSystemException.java  # base + 5 nested exception types
+                │   └── GradeSystemException.java  
                 ├── service/
-                │   ├── GradeService.java          # core business logic
-                │   └── AuthService.java           # login handling
+                │   ├── GradeService.java          
+                │   └── AuthService.java           
                 ├── ui/
-                │   └── ReportPrinter.java         # formatted terminal output
+                │   └── ReportPrinter.java         
                 └── util/
-                    └── FileManager.java           # file read/write helper
+                    └── FileManager.java           
 ```
 
 **A note on file layout:** `Assignment`, `Grade`, and `LetterGrade` are nested
@@ -85,14 +85,12 @@ import com.gradesystem.exception.GradeSystemException.StudentNotFoundException;
 
 ## Setup and Run Instructions
 
-These steps assume a fresh machine with no prior context about this project.
-
 ### Option A — Using plain `javac` / `java` (no Maven required)
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/<Aa-Par>/<Student-Grade-Management-System>.git
+   cd <Student-Grade-Management-System>
    ```
 
 2. **Compile all source files** into an `out/` directory:
@@ -122,9 +120,6 @@ These steps assume a fresh machine with no prior context about this project.
    ```bash
    mvn exec:java -Dexec.mainClass="com.gradesystem.Main"
    ```
-   *(If you don't have the `exec` plugin configured, you can instead package and
-   run the jar — see below.)*
-
    **Or build a runnable jar:**
    ```bash
    mvn package
@@ -169,8 +164,7 @@ After logging in, you'll see a numbered menu:
 1. **Add Assignment** — e.g. name `Midterm Exam`, max marks `50`, weight `40`.
    Add a second one, e.g. `Term End Exam`, max marks `100`, weight `60`.
    (Weights across all assignments should add up to 100 for percentages to
-   represent the full course, though the system will warn — not block — if they
-   don't.)
+   represent the full course)
 2. **Add Student** — e.g. roll number `CSE12345`, name `John Doe`, section `A`.
 3. **Record Grade** — enter the student's roll number, the assignment name
    exactly as created, and the marks obtained.
@@ -180,7 +174,7 @@ After logging in, you'll see a numbered menu:
 5. **View Class Summary** — prints every student's result in one table along
    with the class average and pass rate.
 
-All data you enter is saved automatically to the `data/` folder, so it will
+All data entered is saved automatically to the `data/` folder, so it will
 still be there the next time you run the program.
 
 ---
@@ -193,9 +187,6 @@ still be there the next time you run the program.
 | `data/assignments.txt`  | `name\|maxMarks\|weightPercent`                |
 | `data/grades.txt`       | `rollNumber\|assignmentName\|marksObtained`    |
 | `data/credentials.txt`  | `username\|password`                           |
-
-These files are plain text and human-readable; you can inspect them directly
-to verify what has been saved.
 
 ---
 
@@ -221,7 +212,7 @@ gives a specific, actionable message instead of a stack trace:
 - Entering negative marks or marks above an assignment's maximum → `InvalidGradeException`
 - Failed login attempts → `AuthenticationException`
 
-The application also exits gracefully (no stack trace) if input is piped in
+The application also exits gracefully if input is piped in
 and the stream closes unexpectedly, which makes it safe to script or
 auto-test from the command line.
 
